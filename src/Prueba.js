@@ -1,12 +1,12 @@
 function myApp(props){
     return (
         <div className="prueba">
-            <p>
+            {/* <p>
               example text Hello {props.nombre}
-            </p>
+            </p> */}
         </div>
       );
 }
-
+ {/* <Prueba nombre='Hacker'/> */}
 
 export default myApp;
