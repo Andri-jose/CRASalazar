@@ -3,18 +3,14 @@ import { useState } from "react";
 import './ItemCount.css';
 
 
-function Count(){
-    const [ number, setNumber ] = useState(0)
-    const [ stock, setStock ] = useState(6)
+function Count({stock}){
+    const [ number, setNumber ] = useState(0);
     
     const sum = () => {
-        if(number < 6){
+        if(number < stock){
             setNumber(number + 1);
         }
         
-        if(stock > 0){
-            setStock(stock - 1);
-        }
         
     }
 
@@ -22,14 +18,11 @@ function Count(){
         if(number > 0){
             setNumber(number - 1)   
         }
-        if(stock <= 6){
-            setStock(stock + 1);
-        }
         
     }
 
     const onAdd = () => {
-        alert("you chose " + number + " perfumes");
+        console.log("you chose " + number + " perfumes");
     }
     
     return (
