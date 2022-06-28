@@ -1,19 +1,27 @@
 import React from 'react';
 import './ItemListContainer.css';
 import Count from './ItemCount';
+import ItemList from './ItemList';
 
-function Item({product, price}) {
+function Container() {
     return (
-        <article className='border border-dark w-25 py-5 mt-5 rounded d-flex flex-column  m-auto item'  >   
-            <p>Product: {product}</p>
-            <p>${price}</p>
-            <Count stock='6'/>
-        </article>
+        <main>
+            <article className='d-flex justify-content-around containerItem' >   
+
+                <ItemList className=''/>
+                {/* <Count stock='6'/> */}
+        
+            </article>
+
+        </main>
+        
 
     )
 }
 
+  
+export default Container;
 
-export default Item;
+
 
 

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Dior Homme",
+        "description": "Dior",
+        "price": "U$40",
+        "image": "assets/dior-homme-.jpg", 
+        "id": 1
+    },
+    {
+        "name": "Dior Homme Sport",
+        "description": "Dior",
+        "price": "U$45",
+        "image": "assets/sport.jpg",
+        "id": 2
+    },
+    {
+        "name": "Hugo Boss Bottled",
+        "description": "Hugo Boss",
+        "price": "U$25",
+        "image": "assets/hugo-boss.jpg",
+        "id": 3
+    },
+    {
+        "name": "Hugo Boss Energise",
+        "description": "Hugo Boss",
+        "price": "U$28",
+        "image": "assets/energise.jpg",
+        "id": 4
+    }
+
+
+
+
+
+]
+   
+
