@@ -1,6 +1,6 @@
 import React from 'react';
 import './Item.css';
-
+import ItemDetailContainer from './Detail/ItemDetailContainer';
 
 function Description({id, title, price, img}) {
     return (
@@ -9,7 +9,8 @@ function Description({id, title, price, img}) {
             <p>{title}</p>
             <img className='img' src={img} alt='description product'></img> 
             <p className='pt-2'>{price}</p>
-            <button>Show detail</button>
+            {/* <button>Show Detail</button> */}
+            <ItemDetailContainer />
         </article>
 
     )
@@ -19,10 +20,3 @@ function Description({id, title, price, img}) {
 
 export default Description;
 
-
-// <diV>{item.id}</diV>
-//         <diV>
-//             {item.img}
-//             <p>{item.title}</p>
-//             <p>{item.price}</p>
-//         </diV>

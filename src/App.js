@@ -3,13 +3,15 @@ import React from 'react';
 import './App.css';
 import Container from './components/ItemListContainer';
 import Navbar from './components/Navbar';
+import ItemDetailContainer from './components/Detail/ItemDetailContainer';
 
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Container />
+      {/* <Container /> */}
+      <ItemDetailContainer/>
     </div>
   );
 }
