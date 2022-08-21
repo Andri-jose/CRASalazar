@@ -39,7 +39,7 @@ a:link, a:visited, a:active {
     align-items: center;
     
 }
-li{
+.litest{
     padding-right: 4rem;
     font-size: 1.1rem;
     font-weight: 500;

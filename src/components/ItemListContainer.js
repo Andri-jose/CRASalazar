@@ -3,7 +3,10 @@ import './ItemListContainer.css';
 import Count from './ItemCount';
 import ItemList from './ItemList';
 
-function Container() {
+
+function ItemListContainer() {
+    
+
     return (
         <main>
             <article className='d-flex justify-content-around containerItem' >   
@@ -20,7 +23,7 @@ function Container() {
 }
 
   
-export default Container;
+// export default ItemListContainer;
 
 
 

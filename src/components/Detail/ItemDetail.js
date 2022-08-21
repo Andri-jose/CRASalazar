@@ -1,13 +1,14 @@
 import React from 'react';
 import './ItemDetail.css';
+// import ItemDetailContainer from './ItemDetailContainer';
 
+function ItemDetail({id,name,description,price,image}) {
 
-function ItemDetail({id, title, description, price, img}) {
     return (
-        <article key={id} className='itemDetail'>
-            <diV>{id}</diV>
-            <h1 className='titleDetail'>{title}</h1>
-            <img className='img' src={img} alt='description product'></img>
+        <article  className='itemDetail'>
+            <p>{id}</p>
+            <h1 className='titleDetail'>{name}</h1>
+            <img className='imgDetail' src={image} alt='description product'></img>
             <p className='descriptionDetail'>{description}</p> 
             <p className='pt-2 mb-4'>{price}</p>
             <button className='mb-5'>To buy</button>
@@ -18,5 +19,10 @@ function ItemDetail({id, title, description, price, img}) {
 }
 // img src={ require('./img/${i.image}')} />)}
 
+// {require(`../assets/${img}`)}
+
 export default ItemDetail;
+
+
+// src={require(`../${img}`)}
 
