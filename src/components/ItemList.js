@@ -25,12 +25,15 @@ function ItemList() {
                                 
             })},[params])
 
-
+ 
+       
+   
    
     return (
         <div className='container-fluid d-flex flex-wrap  info'>
-            {items && items.map(i => <Item title={i.name} price={i.price} img={i.image} id={i.id}/>)}
+            {items && items.map(i => <Item title={i.name} price={i.price} img={i.image} id={i.id} key={i.id}/>)}
         </div>
+     
 
 
 

@@ -1,28 +1,110 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ItemDetail.css';
-// import ItemDetailContainer from './ItemDetailContainer';
+import Count from '../ItemCount';
+import CartContext from '../../context/cart-context';
 
-function ItemDetail({id,name,description,price,image}) {
 
+
+function ItemDetail ({id,name,description,price,image}) {
+
+    const data = ({id,name,description,price,image})
+
+    const { addToCart }  = useContext(CartContext)
+
+    const saveData = (newData) => {
+        const units = { 
+            ...newData 
+            
+        }
+        addToCart(data,units)
+        
+    }
+    
     return (
-        <article  className='itemDetail'>
-            <p>{id}</p>
+        <article key={id} className='itemDetail mb-5'>
             <h1 className='titleDetail'>{name}</h1>
             <img className='imgDetail' src={image} alt='description product'></img>
             <p className='descriptionDetail'>{description}</p> 
             <p className='pt-2 mb-4'>{price}</p>
-            <button className='mb-5'>To buy</button>
+            <Count onSave={saveData}/>
+            
         </article>
 
     )
    
 }
-// img src={ require('./img/${i.image}')} />)}
 
-// {require(`../assets/${img}`)}
 
 export default ItemDetail;
 
 
-// src={require(`../${img}`)}
+
+
+
+
+// modo con props:
+
+// const ItemDetail = (props) => {
+//     const {id,name,description,price,image} = props.item;
+
+//     const { addToCart }  = useContext(CartContext)
+
+//     const saveData = (newData) => {
+//         const hello = { 
+//             ...newData 
+            
+//         }
+//         // addToCart()
+        
+//     }
+    
+//     return (
+//         <article key={id} className='itemDetail mb-5'>
+//             <h1 className='titleDetail'>{name}</h1>
+//             <img className='imgDetail' src={image} alt='description product'></img>
+//             <p className='descriptionDetail'>{description}</p> 
+//             <p className='pt-2 mb-4'>{price}</p>
+//             <Count onSave={saveData}/>
+            
+//         </article>
+
+//     )
+   
+// }
+
+
+
+
+
+// modo con funcion:
+
+// function ItemDetail ({id,name,description,price,image}) {
+
+//     const { addToCart }  = useContext(CartContext)
+
+//     const saveData = (newData) => {
+//         const hello = { 
+//             ...newData 
+            
+//         }
+//         // addToCart()
+        
+//     }
+    
+//     return (
+//         <article key={id} className='itemDetail mb-5'>
+//             <h1 className='titleDetail'>{name}</h1>
+//             <img className='imgDetail' src={image} alt='description product'></img>
+//             <p className='descriptionDetail'>{description}</p> 
+//             <p className='pt-2 mb-4'>{price}</p>
+//             <Count onSave={saveData}/>
+            
+//         </article>
+
+//     )
+   
+// }
+
+
+// export default ItemDetail;
 
