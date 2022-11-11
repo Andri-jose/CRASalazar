@@ -7,18 +7,11 @@ import CartContext from '../../context/cart-context';
 
 function ItemDetail ({id,name,description,price,image}) {
 
-    const data = ({id,name,description,price,image})
+    const itemData = ({id,name,description,price,image})
 
     const { addToCart }  = useContext(CartContext)
 
-    const saveData = (newData) => {
-        const units = { 
-            ...newData 
-            
-        }
-        addToCart(data,units)
-        
-    }
+    const saveData = (quantity) => addToCart(itemData, quantity)
     
     return (
         <article key={id} className='itemDetail mb-5'>
@@ -27,9 +20,7 @@ function ItemDetail ({id,name,description,price,image}) {
             <p className='descriptionDetail'>{description}</p> 
             <p className='pt-2 mb-4'>{price}</p>
             <Count onSave={saveData}/>
-            
         </article>
-
     )
    
 }

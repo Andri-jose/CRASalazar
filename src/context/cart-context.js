@@ -10,43 +10,33 @@ export default CartContext;
 
 
 export const Context = ({ defaultValue = [], children }) => {
-    const [ cart, setCart ] = useState(defaultValue);
+    const [cart, setCart] = useState(defaultValue);
 
-    const addToCart = (data,units) => {
-        if(isInCart(data.id)) {  // if the product is on cart 
-            const newCart = [...cart]  // we do copy of cart with spread operator
-            for(const element of newCart) {  // Search which product match with the selected product
-                if(element.data.id === data.id) {
-                   element.number = units.unit +  units.unit;  // When we find it we add the amount
-                    
-                }  
-            }
+    const addToCart = (data, quantity) => {
+        if (isInCart(data.id)) {  // if the product is on cart 
+            const newCart = [...cart]
+            newCart.map((e) => {
+                e.quantity = e.quantity + quantity
+                return e
+            })
             setCart(newCart);
-        } else{
-            setCart(
-                [
-                    ...cart,
-                    {   
-                        data: data,
-                        units: units
-                    }
-                ]
-            )
+        } else { 
+            const newCart = [...cart, {data: data, quantity: quantity }]
+            console.log(newCart)
+            setCart(newCart)
         }
-        
     }
 
     const isInCart = (id) => {
-        return cart.find((element) => element.data.id === id);
+        return cart.map((e) => e.data.id).includes(id);
     }
 
     const contextValues = {
         cart,
         addToCart
-        
     }
     
-    console.log(cart)
+    console.log("after", cart)
 
     return (
         <CartContext.Provider value={contextValues}>
