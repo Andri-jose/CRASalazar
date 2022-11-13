@@ -3,36 +3,23 @@ import { useState } from "react";
 import './ItemCount.css';
 
 
-function Count(props){
-    const [ number, setNumber ] = useState(1);
-    let stock = 6;
+function Count({onSave}){
+    const [number, setNumber] = useState(1);
+    const stock = 6;
     
     const sum = () => {
-        if(number < stock){
+        if (number < stock){
             setNumber(number + 1);
         }
-       
     }
    
     const less = () => {
-        if(number > 1){
+        if (number > 1){
             setNumber(number - 1)   
         }
-      
     }
 
-    const onAdd = (e) => {
-        const value = {
-           unit : number
-        }
-        props.onSave(value)
-       
-    }
-
-
-   
-    
-
+    const onAdd = () => onSave(number)
     
     return (
         <article>
@@ -42,7 +29,7 @@ function Count(props){
                 <button className='buttonCount d-flex align-items-center justify-content-center' onClick={sum}>+</button>
             </div>
             <div>    
-                <button onClick={onAdd}>To buy</button>
+                <button onClick={() => onAdd()}>To buy</button>
             </div>
         </article>
     )
