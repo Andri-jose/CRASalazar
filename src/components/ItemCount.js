@@ -29,7 +29,7 @@ function Count({onSave}){
                 <button className='buttonCount d-flex align-items-center justify-content-center' onClick={sum}>+</button>
             </div>
             <div>    
-                <button onClick={() => onAdd()}>To buy</button>
+                <button onClick={() => onAdd()}>Add to cart</button>
             </div>
         </article>
     )

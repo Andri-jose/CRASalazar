@@ -22,7 +22,6 @@ export const Context = ({ defaultValue = [], children }) => {
             setCart(newCart);
         } else { 
             const newCart = [...cart, {data: data, quantity: quantity }]
-            console.log(newCart)
             setCart(newCart)
         }
     }
@@ -31,12 +30,44 @@ export const Context = ({ defaultValue = [], children }) => {
         return cart.map((e) => e.data.id).includes(id);
     }
 
+    const removeFromCart = (id) => {
+        const newCart = [...cart].filter(element => element.item.id !== id);
+        setCart(newCart)
+    }
+
+    const clearCart = () => {
+        setCart([]);
+    }
+
+    const getQUantity = () => {
+        let cantidad = 0
+        cart.forEach((element) => cantidad = cantidad + element.quantity)
+        return cantidad
+    }       
+
+    const getTotal = () => {
+        let total = 0
+        cart.forEach((element) => {
+            total = total + (element.quantity * element.item.price)
+        })
+        return total
+    }
+
+    
+
+
+
     const contextValues = {
         cart,
-        addToCart
+        addToCart,
+        removeFromCart,
+        clearCart,
+        getQUantity,
+        getTotal
+        
     }
     
-    console.log("after", cart)
+    // console.log(cart)
 
     return (
         <CartContext.Provider value={contextValues}>
